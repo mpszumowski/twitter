@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+Strona główna
+{% endblock %}
+
+{% block main %}
+<div class="enterTweet">
+    <form action="./main/" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+        {% endfor %}
+        <table class="table table-bordered">
+            {% for field in form.visible_fields %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                {{ field.errors }}
+                {{ field }}
+                {{ field.help_text }}
+                    <button type="submit">Tweet</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </form>
+</div>
+
+    {% for tweet in tweets %}
+    <table class="table table-bordered">
+        <tr>
+            <td colspan="2">{{ tweet.author }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{ tweet.content }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ tweet.creation_date }}</td>
+        </tr>
+    </table>
+    <hr>
+    {% endfor %}
+
+{% endblock %}
+

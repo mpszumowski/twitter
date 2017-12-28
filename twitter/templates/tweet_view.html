@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ user.username }} {{ tweet.content|slice:":30" }}
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <td>{{ user.username }}</td>
+    </tr>
+    <tr>
+        <td>{{ tweet.content }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{{ tweet.creation_date }}</td>
+    </tr>
+</table>
+{% endblock %}
+

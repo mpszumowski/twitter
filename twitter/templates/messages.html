@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Strona główna
+{% endblock %}
+
+{% block main %}
+<table>
+    {% for message in messages %}
+    <tr>
+        <td>From:</td>
+        <td>{{ message.author }}</td>
+        <td>To:</td>
+        <td>{{ message.recipient }}</td>
+    </tr>
+    <tr>
+        <td>{{ message.content }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{{ message.creation_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

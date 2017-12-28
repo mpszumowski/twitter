@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Główny panel użytkownika {{ user.username }}
+{% endblock %}
+
+{% block main %}
+<table>
+    {% for tweet in tweets %}
+    <tr>
+        <td>{{ user.username }}</td>
+    </tr>
+    <tr>
+        <td>{{ tweet.content }}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>{{ tweet.creation_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

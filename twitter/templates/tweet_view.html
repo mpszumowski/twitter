@@ -7,7 +7,7 @@
 {% block main %}
 <table>
     <tr>
-        <td>{{ user.username }}</td>
+        <td><a href="/user/{{tweet.author_id}}">{{ tweet.author }}</a></td>
     </tr>
     <tr>
         <td>{{ tweet.content }}</td>

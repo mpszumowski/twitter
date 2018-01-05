@@ -33,7 +33,7 @@ Strona główna
     {% for tweet in tweets %}
     <table class="table table-bordered">
         <tr>
-            <td colspan="2">{{ tweet.author }}</td>
+            <td colspan="2"><a href="/user/{{tweet.author_id}}">{{ tweet.author }}</a></td>
         </tr>
         <tr>
             <td colspan="2">{{ tweet.content }}</td>

@@ -18,7 +18,7 @@ class LoginForm(ModelForm):
 
 
 class TweetForm(forms.Form):
-    content = forms.CharField(label="rzuć coś")
+    content = forms.CharField(label="Ćwierkaj")
 
 
 class MessageForm(ModelForm):

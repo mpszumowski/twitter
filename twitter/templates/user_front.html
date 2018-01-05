@@ -15,7 +15,7 @@ Główny panel użytkownika {{ user.username }}
     </tr>
     <tr>
         <td></td>
-        <td>{{ tweet.creation_date }}</td>
+        <td><a href="/tweet/{{tweet.id}}">{{ tweet.creation_date }}</a></td>
     </tr>
     {% endfor %}
 </table>

@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.urls import include, path
-from twitter.views import (MainView, CreateUserView, UserView)
+from twitter.views import (MainView, CreateUserView, UserView, TweetView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('user_tweets/<int:user_id>', UserView.as_view(), name="user_tweets"),
+    path('tweet/<int:tweet_id>', TweetView.as_view(), name="tweet"),
     path('create_user/', CreateUserView.as_view(success_url='/main/'),
         name="create_view"),
     path('main/', MainView.as_view(), name="main"),

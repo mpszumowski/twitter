@@ -40,9 +40,9 @@ class UserView(LoginRequiredMixin, View):
 
 class TweetView(LoginRequiredMixin, View):
 
-    def get(self, request, user_id, tweet_id):
-        user = User.objects.get(pk=int(user_id))
+    def get(self, request, tweet_id):
         tweet = Tweet.objects.get(pk=int(tweet_id))
+        user = User.objects.get(pk=tweet.author_id)
         return render(request, 'tweet_view.html', {'user': user,
                                                    'tweet': tweet})
 
